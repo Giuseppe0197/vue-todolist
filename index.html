@@ -19,13 +19,15 @@
 
         <button @click="addTask">Aggiungi la task alla lista</button>
 
-        <ul>
+        <div id="divnotask" v-if="tasks.length === 0">La tua lista di cose da fare non ha nessuna task, aggiungine alcune</div>
 
-            <li v-for="task, i in tasks" :mykey="i" @click="addLine(i)" :class="task.done === true ? 'textline' : ''" >
+        <ul v-else>
 
-                {{task.text}}
+            <li v-for="task, i in tasks" :key="i"  :class="task.done === true ? 'textline' : ''" >
 
-                <span @click="removeTask(i)"><i class="fas fa-trash-alt"></i></span>
+                <span @click="addLine(i)">{{task.text}}</span>
+
+                <span class="trash" @click="removeTask(i)"><i class="fas fa-trash-alt"></i></span>
 
             </li>
 

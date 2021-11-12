@@ -10,6 +10,8 @@ var containerTasks  = new Vue (
 
         data: {
 
+            /* creiamo un oggetto che verrà inserito nell'array quando l'utente scrive le proprie task */
+
             newTask:{
                 text: "",
                 done: "false"
@@ -70,6 +72,8 @@ var containerTasks  = new Vue (
                 }
 
             },
+
+            /* permettiamo all'utente anche di rimuovere definitivamente la task se lo desidera */
 
             removeTask(index){
 
