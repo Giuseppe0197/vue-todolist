@@ -11,6 +11,27 @@
 <body>
 
 
+    <div id="container">
+
+        <input type="text" v-model="newTask.text" placeholder="Inserisci una nuova task" @keyup.enter="addTask">
+
+        <button @click="addTask">Aggiungi la task alla lista</button>
+
+        <ul>
+
+            <li v-for="task, i in tasks" mykey:="i" :class="task.done === true ? 'textline' : ''" @click="addLine">
+
+                {{task.text}}
+
+                <span @click="removeTask(i)"><i class="fas fa-trash-alt"></i></span>
+
+            </li>
+
+        </ul>
+
+    </div>
+
+
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <script type="text/javascript" src="js/myscript.js"></script>
     
