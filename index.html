@@ -10,6 +10,8 @@
 </head>
 <body>
 
+    <h1>La mia ToDoList</h1>
+
 
     <div id="container">
 
@@ -19,7 +21,7 @@
 
         <ul>
 
-            <li v-for="task, i in tasks" mykey:="i" @click="addLine(i)" :class="task.done === true ? 'textline' : ''" >
+            <li v-for="task, i in tasks" :mykey="i" @click="addLine(i)" :class="task.done === true ? 'textline' : ''" >
 
                 {{task.text}}
 
