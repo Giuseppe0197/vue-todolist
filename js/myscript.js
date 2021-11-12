@@ -57,9 +57,17 @@ var containerTasks  = new Vue (
 
         methods: {
 
-            addLine(){
+            addLine(index){
 
-                this.tasks.done = true;
+                if(this.tasks[index].done === false){
+
+                    this.tasks[index].done = true;
+
+                } else {
+
+                    this.tasks[index].done = false;
+
+                }
 
             },
 

@@ -19,7 +19,7 @@
 
         <ul>
 
-            <li v-for="task, i in tasks" mykey:="i" :class="task.done === true ? 'textline' : ''" @click="addLine">
+            <li v-for="task, i in tasks" mykey:="i" @click="addLine(i)" :class="task.done === true ? 'textline' : ''" >
 
                 {{task.text}}
 
